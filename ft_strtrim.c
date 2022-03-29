@@ -6,7 +6,7 @@
 /*   By: maralons <maralons@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 09:48:04 by maralons          #+#    #+#             */
-/*   Updated: 2022/03/24 10:54:34 by maralons         ###   ########.fr       */
+/*   Updated: 2022/03/24 18:54:49 by maralons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*aux;
 	char	*dest;
 
+	if (!s1 || !set)
+		return (NULL);
 	aux = malloc(sizeof(char *) * ft_strlen(s1));
 	if (!aux)
 		return (NULL);

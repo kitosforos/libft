@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maralons <maralons@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 09:02:06 by maralons          #+#    #+#             */
-/*   Updated: 2022/03/24 18:52:04 by maralons         ###   ########.fr       */
+/*   Created: 2022/03/25 16:10:09 by maralons          #+#    #+#             */
+/*   Updated: 2022/03/25 16:48:47 by maralons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	char			*str;
-	int				i;
-	unsigned int	dim;
+	int	count;
 
-	if (!s)
-		return (NULL);
-	dim = ft_strlen(s) - start;
-	if (dim < len)
-		len = dim;
-	i = 0;
-	str = malloc ((sizeof(char) * len + 1));
-	if (!str)
-		return (NULL);
-	while (i < (int)len && start <= ft_strlen(s))
-		str[i++] = s[start++];
-	str[i] = 0;
-	return (str);
+	count = 0;
+	if (!lst)
+		return (0);
+	while (lst->next != NULL)
+	{
+		count++;
+		lst = lst->next;
+	}
+	if (lst->next == NULL)
+		count++;
+	return (count);
 }
