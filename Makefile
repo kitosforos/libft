@@ -1,4 +1,6 @@
 CFLAGS = -Wall -Wextra -Werror
+CC = cc
+AR = ar rcs
 
 NAME = libft.a
 
@@ -10,19 +12,26 @@ OBJS = ${SRCS:.c=.o}
 
 BOBJS = ${BSRCS:.c=.o}
 
-${NAME}: ${OBJS}
-	ar rc ${NAME} ${OBJS}
-
 all: ${NAME}
 
-clean:
-	rm -rf *.o
+${NAME}: ${OBJS}
+	${AR} ${NAME} ${OBJS}
 
-fclean:
-	rm -rf ${NAME} *.o 
+bonus: .bonus
+
+.bonus: ${OBJS} ${BOBJS}
+	${AR} ${NAME} ${BOBJS}
+	touch .bonus
+
+%.o: %.c
+	${CC} ${CFLAGS} -c $< -o $@
+
+clean:
+	rm -rf *.o .bonus
+
+fclean: clean
+	rm -rf ${NAME}
 
 re: clean all
 
-bonus: ${OBJS} ${BOBJS}
-	ar rc ${NAME} ${OBJS} ${BOBJS}
- 
+.PHONY: all clean fclean re bonus

@@ -48,8 +48,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		aux[k++] = s1[j--];
 	while (is_set(aux[j], set))
 		j++;
-	dest = malloc (sizeof(char *) * (ft_strlen(s1) - i - j) + 1);
 	dest = ft_substr(s1, i, ft_strlen(s1) - i - j);
+	free(aux);
 	return (dest);
 }
 

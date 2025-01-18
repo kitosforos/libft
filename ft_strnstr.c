@@ -34,7 +34,7 @@ char	*ft_strnstr(char *str, char *to_find, size_t n)
 	if (to_find[0] == 0)
 		return (str);
 	while (str[j] != 0 && j < n)
-	{	
+	{
 		k = 0;
 		if (to_find[0] == str[j])
 		{

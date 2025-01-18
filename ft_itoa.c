@@ -82,9 +82,6 @@ char	*ft_itoa(int n)
 	if (aux < 0 || aux == 0)
 		count++;
 	count += csize(aux);
-	num = malloc(sizeof(char) * (count + 1));
-	if (!num)
-		return (NULL);
 	if (n == -2147483648)
 		num = fill_numero_asqueroso();
 	else

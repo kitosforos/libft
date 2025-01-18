@@ -22,10 +22,10 @@ char	*ft_strrchr(const char *str, int c)
 	while (str[i])
 	{
 		k = 0;
-		if (str[i] == c)
+		if (str[i] == (char)c)
 		{
 			k = i + 1;
-			while (str[k] != c)
+			while (str[k] != (char)c)
 			{
 				if (!str[k])
 					return ((char *)&str[i]);
@@ -34,7 +34,7 @@ char	*ft_strrchr(const char *str, int c)
 		}
 		i++;
 	}
-	if (str[i] == c)
+	if ((char)c == '\0')
 		return ((char *)str + i);
 	return (NULL);
 }
