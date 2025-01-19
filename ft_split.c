@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	countwords(char const *s, char c)
+int	count_words(char const *s, char c)
 {
 	int	i;
 	int	cnt;
@@ -31,37 +31,22 @@ int	countwords(char const *s, char c)
 	return (cnt);
 }
 
-char	*setword(const char *s, size_t size)
+char	**free_words(char **tab, int j)
 {
-	char	*str;
-
-	str = malloc(sizeof(char) * size + 1);
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, s, size + 1);
-	str[size] = 0;
-	return (str);
+	while (j >= 0)
+		free(tab[j--]);
+	free(tab);
+	return (NULL);
 }
 
-void	inicia(int *i, int *j)
+char	**fill_tab_with_words(char **tab, char const *s, char c)
 {
-	*i = 0;
-	*j = 0;
-}
+	int	i;
+	int	j;
+	int	k;
 
-char	**ft_split(char const *s, char c)
-{
-	char	**tab;
-	int		i;
-	int		j;
-	int		k;
-
-	if (!s)
-		return (NULL);
-	inicia(&i, &j);
-	tab = malloc(sizeof(char *) * (countwords(s, c) + 2));
-	if (!tab)
-		return (NULL);
+	i = 0;
+	j = 0;
 	while (s[i])
 	{
 		while (s[i] == c)
@@ -70,10 +55,27 @@ char	**ft_split(char const *s, char c)
 		while (s[i] != c && s[i])
 			i++;
 		if (i > k)
-			tab[j++] = setword(s + k, i - k);
+		{
+			tab[j] = ft_substr(s, k, i - k);
+			if (!tab[j])
+				return (free_words(tab, j - 1));
+			j++;
+		}
 	}
 	tab[j] = NULL;
 	return (tab);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**tab;
+
+	if (!s)
+		return (NULL);
+	tab = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!tab)
+		return (NULL);
+	return (fill_tab_with_words(tab, s, c));
 }
 
 // int main()

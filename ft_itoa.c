@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	csize(int aux)
+int	num_size(int aux)
 {
 	int	count;
 
@@ -25,44 +25,36 @@ int	csize(int aux)
 	return (count);
 }
 
-char	*fill_numero_asqueroso(void)
+char	*min_case(void)
 {
 	char	*num;
 
 	num = malloc(sizeof(char) * 12);
 	if (!num)
 		return (NULL);
-	num[0] = '-';
-	num[1] = '2';
-	num[2] = '1';
-	num[3] = '4';
-	num[4] = '7';
-	num[5] = '4';
-	num[6] = '8';
-	num[7] = '3';
-	num[8] = '6';
-	num[9] = '4';
-	num[10] = '8';
-	num[11] = 0;
-	return ((char *) num);
+	ft_strlcpy(num, "-2147483648", 12);
+	return (num);
 }
 
 char	*filltable(int n, int count)
 {
 	char	*str;
+	int		first;
 
 	str = malloc(sizeof(char) * (count + 1));
 	if (!str)
 		return (NULL);
-	if (n < 0 && n != -2147483648)
+	first = 0;
+	if (n < 0)
 	{
 		str[0] = '-';
 		n *= -1;
+		first = 1;
 	}
 	str[count] = 0;
 	if (n == 0)
 		str[count - 1] = (n % 10) + 48;
-	while (n != 0)
+	while (count > first)
 	{
 		str[count - 1] = (n % 10) + 48;
 		n /= 10;
@@ -81,9 +73,9 @@ char	*ft_itoa(int n)
 	count = 0;
 	if (aux < 0 || aux == 0)
 		count++;
-	count += csize(aux);
+	count += num_size(aux);
 	if (n == -2147483648)
-		num = fill_numero_asqueroso();
+		num = min_case();
 	else
 		num = filltable(n, count);
 	return (num);

@@ -11,18 +11,15 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *src)
 {
-	int		cuenta;
 	int		i;
 	char	*copia;
 
-	cuenta = 0;
 	i = 0;
-	while (src[cuenta] != '\0')
-		cuenta++;
-	copia = (char *) malloc (sizeof(char) * (cuenta + 1));
+	copia = (char *) malloc (sizeof(char) * (ft_strlen(src) + 1));
 	if (!copia)
 		return (NULL);
 	while (src[i] != '\0')
