@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maralons <maralons@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcoalo <marcoalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 17:54:44 by maralons          #+#    #+#             */
-/*   Updated: 2022/03/29 19:41:16 by maralons         ###   ########.fr       */
+/*   Updated: 2025/01/21 13:01:23 by marcoalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

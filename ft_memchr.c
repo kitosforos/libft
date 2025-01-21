@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maralons <maralons@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcoalo <marcoalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 19:43:48 by maralons          #+#    #+#             */
-/*   Updated: 2022/03/24 17:07:40 by maralons         ###   ########.fr       */
+/*   Updated: 2025/01/21 13:01:11 by marcoalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {

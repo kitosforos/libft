@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maralons <maralons@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcoalo <marcoalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 18:03:01 by maralons          #+#    #+#             */
-/*   Updated: 2022/03/22 18:48:52 by maralons         ###   ########.fr       */
+/*   Updated: 2025/01/21 13:01:29 by marcoalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
 
 void	*ft_memset(void *str, int c, size_t n)

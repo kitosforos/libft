@@ -24,7 +24,7 @@ ${NAME}: ${OBJS}
 bonus: .bonus
 
 .bonus: ${OBJS} ${BOBJS}
-	${AR} ${NAME} ${BOBJS}
+	${AR} ${NAME} ${OBJS} ${BOBJS}
 	touch .bonus
 
 %.o: %.c
@@ -36,6 +36,6 @@ clean:
 fclean: clean
 	rm -rf ${NAME}
 
-re: clean all
+re: fclean all
 
 .PHONY: all clean fclean re bonus

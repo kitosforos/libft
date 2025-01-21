@@ -3,15 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maralons <maralons@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcoalo <marcoalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:46:00 by maralons          #+#    #+#             */
-/*   Updated: 2022/03/21 19:11:19 by maralons         ###   ########.fr       */
+/*   Updated: 2025/01/21 13:02:25 by marcoalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
 
 unsigned long	ft_strlen(const char *s)
 {

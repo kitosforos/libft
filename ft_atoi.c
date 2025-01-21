@@ -3,15 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maralons <maralons@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marcoalo <marcoalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:09:23 by maralons          #+#    #+#             */
-/*   Updated: 2022/03/29 19:43:12 by maralons         ###   ########.fr       */
+/*   Updated: 2025/01/21 13:00:49 by marcoalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-#include <stdio.h>
 
 int	ft_atoi(const char *str)
 {
